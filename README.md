@@ -158,15 +158,13 @@ Para cada camino independiente, diseña un caso de prueba.
  * Sistema de reserva de salas de reunión
  * 
  * ENTRADAS:
- * - codigoSala: String de 4 caracteres alfanuméricos (ej: "S001", "SALA")
- * - numeroPersonas: Entero entre 1 y 20 (capacidad de la sala)
+ * - numeroPersonas: Entero entre 1 y 15 (capacidad de la sala)
  * - duracionHoras: Entero entre 1 y 8 (horas de reserva)
- * - tipoUsuario: Un carácter: 'E' (empleado), 'G' (gerente), 'V' (visitante)
+ * - tipoUsuario: Un carácter: 'E' (empleado), 'G' (gerente)
  * 
  * REGLAS DE NEGOCIO:
  * - Empleados: $10 por hora
  * - Gerentes: $5 por hora (50% descuento)
- * - Visitantes: $20 por hora
  * - Si numeroPersonas > 10, hay un recargo del 20%
  * 
  * SALIDAS:
@@ -175,9 +173,39 @@ Para cada camino independiente, diseña un caso de prueba.
  * EXCEPCIONES:
  * - IllegalArgumentException si algún parámetro es inválido
  */
-public double calcularCostoReserva(String codigoSala, int numeroPersonas, 
-                                    int duracionHoras, char tipoUsuario) {
-    // Implementación omitida para el ejercicio
+public double calcularCostoReserva(int numeroPersonas, int duracionHoras, char tipoUsuario) {
+    // Validar numeroPersonas
+    if (numeroPersonas < 1 || numeroPersonas > 15) {
+        throw new IllegalArgumentException("Número de personas debe estar entre 1 y 15");
+    }
+    
+    // Validar duracionHoras
+    if (duracionHoras < 1 || duracionHoras > 8) {
+        throw new IllegalArgumentException("Duración debe estar entre 1 y 8 horas");
+    }
+    
+    // Validar tipoUsuario
+    if (tipoUsuario != 'E' && tipoUsuario != 'G') {
+        throw new IllegalArgumentException("Tipo de usuario debe ser 'E' o 'G'");
+    }
+    
+    // Calcular tarifa base según tipo de usuario
+    double tarifaPorHora = 0;
+    if (tipoUsuario == 'E') {
+        tarifaPorHora = 10.0;  // Empleado
+    } else {
+        tarifaPorHora = 5.0;   // Gerente
+    }
+    
+    // Calcular costo base
+    double costoBase = tarifaPorHora * duracionHoras;
+    
+    // Aplicar recargo si hay más de 10 personas
+    if (numeroPersonas > 10) {
+        costoBase = costoBase * 1.20;  // Recargo del 20%
+    }
+    
+    return costoBase;
 }
 ```
 
