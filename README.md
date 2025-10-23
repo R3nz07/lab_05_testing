@@ -40,13 +40,10 @@ Desarrollar pruebas unitarias completas para una clase `GestionBiblioteca` que i
 
 ### Tareas a realizar:
 
-#### 1. Implementar la clase `GestionBiblioteca.java`
-- Crear la clase con las 5 funciones descritas
-- Incluir validaciones apropiadas
-- Implementar manejo de excepciones
-
-#### 2. Crear la clase de pruebas `TestGestionBiblioteca.java`
+#### 1. Crear la clase de pruebas `TestGestionBiblioteca.java`
 Debe incluir:
+
+> **Realizar al menos 1 test de cada función.**
 
 **Tests para `calcularPrecioConDescuento`:**
 - Precio sin descuento (0%)
@@ -137,7 +134,7 @@ Camino 3: ...
 ```
 
 #### 4. Diseñar Casos de Prueba
-Para cada camino independiente, diseña un caso de prueba.
+Selecciona un camino independiente y diseña un caso de prueba.
 
 **Formato de tabla:**
 
