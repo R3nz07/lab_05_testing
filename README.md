@@ -220,9 +220,6 @@ Para cada campo de entrada, identifica:
 | Campo | Condición de Entrada | Clases Válidas | Clases No Válidas |
 |-------|---------------------|----------------|-------------------|
 | codigoSala | Valor específico (4 caracteres alfanuméricos) | CEV1: String de 4 caracteres alfanuméricos (ej: "S001", "SALA") | CENV1: String con menos de 4 caracteres (ej: "S1")<br>CENV2: String con más de 4 caracteres (ej: "SALA01")<br>CENV3: String con caracteres especiales (ej: "S@01")<br>CENV4: null |
-| numeroPersonas | Rango (1-20) | CEV2: ... | CENV5: ...<br>CENV6: ... |
-| duracionHoras | Rango (1-8) | CEV3: ... | CENV7: ...<br>CENV8: ... |
-| tipoUsuario | Conjunto ('E', 'G', 'V') | CEV4: ... | CENV9: ... |
 
 #### 2. Diseñar Casos de Prueba Válidos
 
